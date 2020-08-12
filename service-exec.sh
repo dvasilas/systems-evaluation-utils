@@ -31,3 +31,5 @@ CONTAINER_ID=$(docker inspect --format '{{ .Status.ContainerStatus.ContainerID }
 NODE_HOST=$(docker node inspect --format '{{ .Description.Hostname }}' $NODE_ID)
 
 ssh -tt $NODE_HOST docker exec -ti $CONTAINER_ID $@
+
+echo $NODE_HOST
